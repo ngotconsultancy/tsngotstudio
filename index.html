@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biên bản tâm sự — Sale &amp; Marketing Ngọt Hà Nội | NGỌT Studio Consultancy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* ═══ BỘ NHẬN DIỆN NGỌT — STUDIO CONSULTANCY ═══ */
+:root{
+  /* Màu nền tảng */
+  --ink:#0A0A0A; --cream:#F5F0E8; --gold:#C9A84C; --warm-gray:#8A7F74;
+  /* Màu nhấn */
+  --steel:#3A4A5C; --steel-light:#6E8698; --forest:#2A4A3A; --gold-light:#E8C96A;
+  /* Màu kỹ thuật */
+  --surface:#12151A; --surface-2:#1A1F26; --gold-dark:#8C6D2A;
+  /* Màu chức năng — chỉ dùng trong tài liệu phân tích nội bộ */
+  --bad:#B5766A; --good:#7FA88B;
+
+  --bg:var(--ink); --fg:var(--cream);
+  --muted:var(--warm-gray);
+  --line:rgba(245,240,232,.11); --line-gold:rgba(201,168,76,.22);
+  --accent:var(--gold); --accent-soft:rgba(201,168,76,.10);
+  --bad-soft:rgba(181,118,106,.13); --good-soft:rgba(127,168,139,.13);
+  --warn:var(--gold-light); --warn-soft:rgba(232,201,106,.11);
+  --mkt:var(--steel-light); --mkt-soft:rgba(110,134,152,.15);
+  --sale:var(--gold); --sale-soft:rgba(201,168,76,.13);
+  --both-soft:rgba(245,240,232,.10);
+
+  --display:'Playfair Display',Georgia,serif;
+  --body:'Be Vietnam Pro',system-ui,-apple-system,sans-serif;
+  --mono:'DM Mono',ui-monospace,monospace;
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#F5F0E8; --fg:#0A0A0A; --surface:#FBF9F4; --surface-2:#F0EBE1;
+  --muted:#6B665D; --line:rgba(10,10,10,.13); --line-gold:rgba(140,109,42,.28);
+  --accent:#8C6D2A; --accent-soft:rgba(140,109,42,.10);
+  --bad:#A8433A; --good:#3D6647; --warn:#A77616;
+  --bad-soft:rgba(168,67,58,.10); --good-soft:rgba(61,102,71,.11); --warn-soft:rgba(167,118,22,.11);
+  --mkt:#3F6076; --mkt-soft:rgba(63,96,118,.12);
+  --sale:#8C6D2A; --sale-soft:rgba(140,109,42,.13);
+  --both-soft:rgba(10,10,10,.07);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.6;
+  padding-inline:20px;padding-block:22px 64px;margin:0;-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:var(--ink)}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:30px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1;margin:0;text-wrap:balance}
+h1{font-size:clamp(32px,5vw,50px);letter-spacing:-.01em}
+h2{font-size:clamp(24px,3vw,32px)}
+h3{font-size:22px}
+p{margin:0;max-width:74ch}
+
+/* thanh thương hiệu */
+.brandbar{max-width:1120px;margin:0 auto 26px;display:flex;align-items:center;gap:12px;
+  padding:6px 0 14px;border-bottom:1px solid var(--line-gold)}
+.brandbar .mk{width:34px;height:34px;color:var(--gold);flex-shrink:0}
+.brandbar .nm b{display:block;font-family:var(--display);font-size:18px;font-weight:700;line-height:1}
+.brandbar .nm span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted);margin-top:3px}
+.brandbar .sp{flex:1}
+.themebtn{font:inherit;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  background:transparent;border:1px solid var(--line-gold);color:var(--accent);padding:7px 12px;
+  border-radius:2px;cursor:pointer}
+.themebtn:hover{background:var(--accent-soft)}
+
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.sub{color:var(--muted);font-size:14.5px}
+header{display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--line);padding-bottom:22px}
+.tldr{background:var(--surface);border:1px solid var(--line-gold);border-left:3px solid var(--gold);
+  border-radius:2px;padding:18px 20px;display:flex;flex-direction:column;gap:7px}
+.tldr b{color:var(--accent)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:15px 17px;display:flex;flex-direction:column;gap:4px}
+.tile .k{font-size:12px;color:var(--muted);letter-spacing:.03em}
+.tile .v{font-family:var(--display);font-size:34px;font-weight:700;line-height:1.05;font-variant-numeric:tabular-nums}
+.tile .d{font-size:12.5px;color:var(--muted)}
+.tile.mk{border-left:3px solid var(--mkt)}.tile.sl{border-left:3px solid var(--sale)}
+section{display:flex;flex-direction:column;gap:15px}
+.sechead{display:flex;align-items:baseline;gap:13px;flex-wrap:wrap}
+.sechead .no{font-family:var(--display);font-size:30px;font-weight:900;color:var(--accent);line-height:1}
+.tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:2px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  font-weight:500;background:var(--accent-soft);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.chip{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;padding:3px 9px;border-radius:2px;white-space:nowrap}
+.c-bad{background:var(--bad-soft);color:var(--bad)}.c-warn{background:var(--warn-soft);color:var(--warn)}
+.c-good{background:var(--good-soft);color:var(--good)}.c-neu{background:var(--accent-soft);color:var(--accent)}
+.c-mkt{background:var(--mkt-soft);color:var(--mkt)}.c-sale{background:var(--sale-soft);color:var(--sale)}
+.neg{color:var(--bad)}.pos{color:var(--good)}
+.note{font-size:12.5px;color:var(--muted)}
+.steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px}
+button{font:inherit}
+.seg{display:flex;flex-wrap:wrap;gap:7px}
+.seg button{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 14px;border-radius:2px;cursor:pointer}
+.seg button:hover{color:var(--fg)}
+.seg button[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:640px){body{padding-inline:16px}th,td{padding:8px 9px}}
+
+/* thẻ điểm nghẽn */
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.pcard[data-g="mkt"]{border-left:3px solid var(--mkt)}
+.pcard[data-g="sale"]{border-left:3px solid var(--sale)}
+.pcard[data-g="both"]{border-left:3px solid var(--cream)}
+.pcard summary{list-style:none;cursor:pointer;padding:16px 18px;display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center}
+.pcard summary::-webkit-details-marker{display:none}
+.pcard summary:hover{background:var(--accent-soft)}
+.pcard .no{font-family:var(--display);font-size:30px;font-weight:900;color:var(--accent);line-height:1}
+.pcard .tt{font-family:var(--display);font-size:22px;font-weight:700;line-height:1.18}
+.pcard .tt .who{display:block;margin-top:6px}
+.pcard .imp{text-align:right;font-size:11.5px;color:var(--muted);min-width:120px}
+.pcard .imp b{display:block;font-family:var(--display);font-size:24px;font-weight:700;color:var(--accent)}
+.steps6{display:grid;border-top:1px solid var(--line)}
+.st{display:grid;grid-template-columns:170px 1fr;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line)}
+.st:last-child{border-bottom:0}
+.st .lb{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--muted);padding-top:3px}
+.st .lb i{font-style:normal;color:var(--accent);margin-right:6px}
+.st ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.st.harm{background:var(--bad-soft)}
+.st.harm .lb,.st.harm .lb i{color:var(--bad)}
+.st.risk{background:var(--warn-soft)}
+.st.risk .lb,.st.risk .lb i{color:var(--warn)}
+@media (max-width:680px){.st{grid-template-columns:1fr;gap:4px}.pcard summary{grid-template-columns:32px 1fr}.pcard .imp{grid-column:2;text-align:left;min-width:0}}
+.code{display:inline-block;min-width:30px;font-family:var(--mono);font-size:10.5px;padding:1px 6px;border-radius:2px;
+  background:var(--accent-soft);color:var(--accent);margin-right:5px;font-variant-numeric:tabular-nums}
+.gx{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+
+/* thử kéo */
+.sim{background:var(--surface);border:1px solid var(--line-gold);border-radius:2px;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:760px){.sim{grid-template-columns:1fr}}
+.simrow{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.simrow label{font-size:13.5px;font-weight:600;display:flex;justify-content:space-between;gap:10px}
+.simrow label span{color:var(--accent);font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:13px}
+input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer}
+.simout{border-left:1px solid var(--line);padding-left:22px;display:flex;flex-direction:column;gap:13px}
+@media (max-width:760px){.simout{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:16px}}
+.simbig{font-family:var(--display);font-size:46px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--gold)}
+.simline{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;border-bottom:1px dashed var(--line);padding-bottom:7px}
+.simline b{font-variant-numeric:tabular-nums}
+.simnote{font-size:12.5px;color:var(--muted)}
+.mark{background:var(--accent-soft);color:var(--accent);padding:2px 6px;border-radius:2px;font-weight:600}
+
+/* ưu tiên */
+.prio{display:grid;gap:12px}
+.pr{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:15px 17px;display:grid;grid-template-columns:36px 1fr 152px;gap:14px;align-items:start}
+.pr .n{font-family:var(--display);font-size:28px;font-weight:900;color:var(--accent);line-height:1}
+.pr .t{font-weight:600;margin-bottom:4px}
+.pr .w{font-size:12.5px;color:var(--muted);text-align:right}
+.pr .w b{display:block;color:var(--fg)}
+@media (max-width:680px){.pr{grid-template-columns:30px 1fr}.pr .w{grid-column:2;text-align:left}}
+
+/* ai làm gì */
+.owner{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.ow{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:16px 18px}
+.ow h4{margin:0 0 9px;font-family:var(--display);font-size:21px;font-weight:700}
+.ow ul{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:6px;font-size:13.5px}
+.ck{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:2px;cursor:pointer;background:transparent;user-select:none;font-size:13.5px}
+.ck:hover{border-color:var(--line-gold)}
+.ck.done{border-color:var(--gold);background:var(--accent-soft)}
+.ck .bx{width:16px;height:16px;border:1px solid var(--muted);border-radius:2px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:11px;color:transparent}
+.ck.done .bx{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.cklist{display:flex;flex-direction:column;gap:7px;margin-top:9px}
+.warnbox{border:1px solid var(--warn);background:var(--warn-soft);border-radius:2px;padding:15px 17px;display:flex;flex-direction:column;gap:7px;font-size:14px}
+.warnbox b.h{color:var(--warn);font-family:var(--display);font-size:18px;font-weight:700}
+[hidden]{display:none!important}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+/* chân trang */
+footer.brand{max-width:1120px;margin:22px auto 0;border-top:1px solid var(--line-gold);padding-top:22px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+footer.brand .mk{width:40px;color:var(--gold)}
+footer.brand .t b{display:block;font-family:var(--display);font-size:18px;font-weight:700}
+footer.brand .t span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+footer.brand .slg{margin-left:auto;font-family:var(--display);font-style:italic;font-size:16px;color:var(--gold);text-align:right}
+@media(max-width:640px){footer.brand .slg{margin-left:0;text-align:left}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="nsc-mark" viewBox="0 0 1077 952">
+    <g transform="translate(0,952) scale(0.1,-0.1)" fill="currentColor" stroke="none"><path d="M4010 9509 c-127 -25 -214 -104 -288 -263 -28 -58 -79 -159 -115 -224 -35 -64 -110 -205 -168 -312 -194 -362 -228 -380 -729 -380 -428 0 -442 5 -632 197 -134 135 -183 164 -280 165 -122 2 -137 -9 -579 -437 -430 -417 -439 -427 -439 -536 0 -113 14 -136 214 -334 281 -277 280 -276 274 -822 -4 -332 -6 -363 -27 -431 -106 -356 -427 -615 -867 -702 -184 -36 -203 -41 -244 -69 -47 -31 -92 -91 -111 -146 -21 -60 -20 -988 0 -1060 35 -120 125 -176 341 -211 465 -74 777 -320 882 -696 18 -64 21 -110 25 -389 8 -506 3 -520 -264 -782 -200 -197 -223 -232 -223 -337 0 -112 8 -122 410 -518 412 -407 423 -416 550 -417 107 0 154 26 325 185 236 218 281 235 640 235 286 0 334 -9 485 -85 275 -139 500 -475 580 -865 26 -124 98 -214 205 -254 57 -21 65 -22 579 -19 l521 3 50 27 c84 44 175 164 175 230 0 50 78 277 134 393 133 272 326 451 577 537 93 31 97 32 324 36 362 6 422 -15 635 -223 165 -162 178 -170 290 -170 112 0 138 15 307 187 181 184 177 173 181 458 4 302 -25 377 -173 450 l-50 25 -2740 5 c-2251 4 -2747 8 -2780 19 -168 56 -287 183 -329 352 -24 96 -25 4617 -1 4718 43 179 185 319 364 357 51 11 172 14 547 14 607 0 610 1 713 176 235 398 603 682 1024 790 749 191 1459 -118 1823 -794 36 -68 110 -135 171 -156 67 -23 1422 -24 1499 -1 170 50 243 165 251 395 9 240 -41 369 -172 446 -83 48 -77 48 -745 54 l-635 5 -65 31 c-83 40 -150 99 -193 172 -94 156 -345 643 -403 780 -24 59 -119 144 -191 174 l-58 23 -775 2 c-426 0 -795 -3 -820 -8z M4521 8074 c-852 -143 -1285 -1119 -814 -1833 475 -720 1563 -725 2027 -10 576 889 -167 2018 -1213 1843z m346 -539 c654 -125 682 -1051 38 -1271 -390 -133 -820 171 -842 596 -22 423 375 757 804 675z M8166 7084 c-301 -73 -490 -402 -397 -694 l21 -65 -233 -227 -232 -227 -475 -1 c-440 0 -478 -2 -515 -19 -161 -74 -145 -305 25 -351 85 -23 1108 -8 1160 16 30 15 128 103 301 272 l256 251 49 -16 c81 -26 263 -24 346 5 391 135 508 625 218 911 -135 134 -339 190 -524 145z m227 -299 c94 -39 157 -134 157 -235 0 -286 -414 -346 -496 -72 -60 199 148 387 339 307z M2125 6873 c-46 -24 -66 -45 -86 -88 -18 -38 -19 -125 -19 -2200 0 -2432 -7 -2208 76 -2271 l37 -29 336 -3 336 -3 45 24 c93 49 84 -108 90 1566 l5 1474 70 -94 c304 -411 617 -844 1090 -1504 996 -1392 1000 -1397 1053 -1427 l47 -28 297 0 c353 0 369 4 419 102 18 36 19 88 19 1849 l0 1812 -42 -54 c-216 -277 -492 -457 -825 -539 l-43 -11 0 -727 -1 -727 -27 34 c-55 68 -317 426 -602 821 -134 185 -176 241 -575 765 -138 182 -319 420 -401 530 -548 732 -520 697 -576 726 -52 27 -673 29 -723 2z M10095 6175 c-166 -37 -304 -146 -378 -297 l-32 -67 -480 -3 -480 -3 -45 -24 c-25 -13 -115 -91 -200 -175 -85 -83 -214 -208 -286 -279 l-131 -127 -847 0 c-929 0 -883 3 -942 -61 -91 -98 -54 -262 69 -308 53 -20 1823 -15 1882 5 51 18 36 4 459 412 l189 182 411 0 411 0 30 -58 c167 -321 621 -382 880 -118 385 391 26 1040 -510 921z m249 -319 c159 -93 164 -325 9 -429 -217 -145 -482 97 -361 329 66 125 230 172 352 100z M8856 4835 c-134 -37 -270 -142 -336 -257 l-32 -58 -1067 0 -1067 0 -45 -29 c-118 -74 -112 -258 11 -321 39 -20 57 -20 1091 -23 923 -2 1053 -4 1060 -17 5 -8 21 -42 36 -75 214 -456 921 -370 1038 128 94 399 -289 762 -689 652z m223 -291 c109 -32 187 -143 179 -253 -20 -260 -367 -331 -482 -99 -98 197 90 416 303 352z M6335 3846 c-117 -53 -149 -211 -62 -304 54 -58 39 -57 582 -60 l500 -3 214 -208 214 -207 -17 -50 c-10 -27 -20 -89 -23 -139 -29 -507 573 -773 938 -415 419 411 -10 1082 -577 903 l-54 -17 -235 235 c-129 129 -252 243 -273 254 -48 26 -1152 36 -1207 11z m2080 -785 c94 -52 147 -161 126 -261 -46 -227 -344 -283 -464 -88 -136 220 111 475 338 349z"/></g>
+  </symbol>
+</svg>
+
+<div class="brandbar">
+  <svg class="mk" viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+  <div class="nm"><b>NGỌT</b><span>Studio Consultancy</span></div>
+  <span class="sp"></span>
+  <button class="themebtn" id="themebtn">Nền sáng</button>
+</div>
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">Biên bản tâm sự cùng chủ Studio · Buổi 01 · Nhận diện vấn đề</span>
+  <h1>Lead giảm, hợp đồng giảm mạnh hơn,<br>doanh thu <em style="color:var(--gold);font-style:italic">đi xuống thật</em></h1>
+  <p class="sub">Đơn vị: Bộ phận Sale &amp; Marketing — Ngọt Studio Hà Nội · Ngày làm việc 25/09/2026 · Đơn vị thực hiện: NGỌT Studio Consultancy</p>
+  <p class="sub">Kỳ đo: <b>T1–T8/2026</b> · Kỳ so sánh: <b>T6–T12/2025</b> (so trung bình tháng) · Mục tiêu: <b>450tr/tháng trung bình T10/2026 – T4/2027</b></p>
+</header>
+
+<div class="tldr">
+  <span class="eyebrow">Kết luận trong ba câu</span>
+  <p><b>Một.</b> So với nửa cuối 2025, mỗi tháng Ngọt Hà Nội nhận ít hơn <b>12,3%</b> lead, nhưng ký ít hơn <b>22,7%</b> hợp đồng. Hợp đồng rơi nhanh gấp đôi lead — nghĩa là vấn đề không chỉ nằm ở đầu vào.</p>
+  <p><b>Hai.</b> Doanh thu trung bình tháng giảm <b>14,2%</b> (360,6tr → 309,6tr). Giá trị mỗi đơn có tăng 11,0% nhưng không đủ bù. Chi phí quảng cáo để có một hợp đồng tăng <b>16,9%</b>.</p>
+  <p><b>Ba.</b> Dữ liệu 2.740 hội thoại nói rõ nút thắt nằm ở đâu: chỉ <b>0,5%</b> khách rớt vì chê đắt, nhưng <b>57,4%</b> khách rớt sau khi đã nói chuyện từ 16 tin trở lên. Họ quan tâm thật — rồi im lặng rời đi. Vấn đề là <b>niềm tin</b>, không phải giá và cũng không phải quy trình.</p>
+</div>
+
+<!-- ══ PHẦN 1 · BỨC TRANH SỐ LIỆU ══ -->
+<section>
+  <div class="sechead"><span class="no">01</span><h2>Bức tranh số liệu</h2></div>
+  <p class="sub">Tất cả số dưới đây quy về <b>trung bình một tháng</b> để hai kỳ dài ngắn khác nhau (7 tháng và 8 tháng) vẫn so được với nhau.</p>
+
+  <div class="tablebox"><table>
+    <thead><tr>
+      <th>Chỉ số (trung bình / tháng)</th>
+      <th class="r">T6–T12/2025</th>
+      <th class="r">T1–T8/2026</th>
+      <th class="r">Thay đổi</th>
+      <th>Đọc như thế nào</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><b>Lead</b></td><td class="r">895</td><td class="r">784</td><td class="r neg">−12,3%</td><td>Đầu vào co lại — nhưng chưa phải nguyên nhân chính</td></tr>
+      <tr><td><b>Hợp đồng</b></td><td class="r">154</td><td class="r">119</td><td class="r neg"><b>−22,7%</b></td><td>Rơi nhanh gấp đôi lead. Đây mới là chỗ đau</td></tr>
+      <tr><td><b>Tỷ lệ chuyển đổi</b></td><td class="r">17,2%</td><td class="r">15,2%</td><td class="r neg"><b>−2,0 điểm</b></td><td>Cùng một lượng lead, nay ký được ít hợp đồng hơn</td></tr>
+      <tr><td><b>Doanh thu</b></td><td class="r">360,6tr</td><td class="r">309,6tr</td><td class="r neg"><b>−14,2%</b></td><td>Giảm thật, không phải cảm giác</td></tr>
+      <tr><td>Giá trị mỗi đơn</td><td class="r">2.344.000đ</td><td class="r">2.602.000đ</td><td class="r pos">+11,0%</td><td>Điểm sáng duy nhất — nhưng không đủ bù 35 hợp đồng mất đi</td></tr>
+      <tr><td>Chi quảng cáo</td><td class="r">32,6tr</td><td class="r">29,4tr</td><td class="r">−9,6%</td><td>Chi ít hơn 9,6% nhưng lead giảm 12,3% — tiền kém hiệu quả đi</td></tr>
+      <tr><td><b>Chi quảng cáo / hợp đồng</b></td><td class="r">211.600đ</td><td class="r">247.300đ</td><td class="r neg"><b>+16,9%</b></td><td>Mỗi hợp đồng nay tốn thêm gần 36.000đ tiền quảng cáo</td></tr>
+      <tr><td>Tỷ lệ giảm giá trên doanh số</td><td class="r">13,3%</td><td class="r">13,3%</td><td class="r">0</td><td>Không đổi — nên đây không phải nguyên nhân</td></tr>
+      <tr><td>Hợp đồng đến từ giới thiệu</td><td class="r">10,4%</td><td class="r">16,2%</td><td class="r pos">+5,8 điểm</td><td>Tăng dù <b>chưa có chương trình nào</b> — đòn bẩy đang bỏ ngỏ</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warnbox">
+    <b class="h">Điều con số này thực sự nói</b>
+    <p>Nếu chỉ lead giảm, đó là bài toán của Marketing. Nhưng <b>hợp đồng giảm 22,7% trong khi lead chỉ giảm 12,3%</b> — phần chênh lệch đó không đến từ đầu vào. Nó đến từ việc cùng một lượng lead, Ngọt nay biến được ít người thành khách hơn. Giá không đổi, mức giảm giá không đổi, giá trị đơn còn tăng. Thứ mất đi là <b>khả năng chốt</b>.</p>
+  </div>
+
+  <div class="tiles">
+    <div class="tile"><span class="k">Phần hụt do lead giảm</span><span class="v neg">19<small style="font-size:18px"> HĐ</small></span><span class="d">mỗi tháng · thuộc về Marketing</span></div>
+    <div class="tile"><span class="k">Phần hụt do chuyển đổi rơi</span><span class="v neg">16<small style="font-size:18px"> HĐ</small></span><span class="d">mỗi tháng · thuộc về cả hai bộ phận</span></div>
+    <div class="tile"><span class="k">Tổng hụt</span><span class="v neg">35<small style="font-size:18px"> HĐ</small></span><span class="d">mỗi tháng so với nửa cuối 2025</span></div>
+  </div>
+  <p class="note">Tách như sau: nếu giữ nguyên tỷ lệ chuyển đổi 17,2% của 2025 trên 784 lead hiện nay, Ngọt vẫn ký được 135 hợp đồng/tháng — tức phần mất do lead giảm là 19 hợp đồng, phần mất do chuyển đổi rơi là 16 hợp đồng. <b>Hai phần gần ngang nhau, nên không thể chỉ sửa một bên.</b></p>
+
+  <h3 style="margin-top:6px">Khoảng cách tới mục tiêu — và hai con đường để đóng nó lại</h3>
+  <div class="tiles">
+    <div class="tile"><span class="k">Doanh thu hiện tại</span><span class="v">309,6<small style="font-size:18px">tr</small></span><span class="d">trung bình / tháng, T1–T8/2026</span></div>
+    <div class="tile"><span class="k">Cùng kỳ năm ngoái</span><span class="v">370,0<small style="font-size:18px">tr</small></span><span class="d">T10/2025 – T4/2026, trung bình tháng</span></div>
+    <div class="tile"><span class="k">Mục tiêu</span><span class="v pos">450<small style="font-size:18px">tr</small></span><span class="d">TB T10/2026 – T4/2027 · +21,6% so cùng kỳ</span></div>
+    <div class="tile"><span class="k">Đang thiếu</span><span class="v neg">140,4<small style="font-size:18px">tr</small></span><span class="d">mỗi tháng · tương đương 54 hợp đồng</span></div>
+  </div>
+
+  <div class="tablebox"><table>
+    <thead><tr><th>Hai con đường đóng khoảng cách 140,4tr/tháng</th><th class="r">Lead cần có</th><th class="r">Tỷ lệ chuyển đổi</th><th class="r">Hợp đồng/tháng</th><th>Cái giá phải trả</th></tr></thead>
+    <tbody>
+      <tr><td><b>Cách A · Mua thêm lead</b>, giữ nguyên cách bán</td><td class="r neg">1.138</td><td class="r">15,2%</td><td class="r">173</td><td class="neg">Ngân sách quảng cáo từ 29,4tr lên <b>42,7tr/tháng</b> (+45,1%) — và chi phí mỗi hợp đồng vốn đã tăng 16,9%</td></tr>
+      <tr><td><b>Cách B · Kéo chuyển đổi</b>, giữ nguyên lead</td><td class="r pos">784</td><td class="r pos">22,1%</td><td class="r">173</td><td class="pos">Không tốn thêm một đồng ngân sách — đổi lại phải sửa cách bán</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Mốc <b>20% ở tháng 10</b> chỉ cho 408tr — vẫn thiếu 42tr. Để trung bình bảy tháng đạt 450tr thì chuyển đổi trung bình phải là <b>22,1%</b>, và đích tháng 4 là <b>23%</b>. Con số này <b>cao hơn hẳn kỳ tốt nhất</b> Ngọt Hà Nội từng đạt (17,2% nửa cuối 2025), nên đây là mục tiêu rất căng. Toàn bộ phần còn lại của biên bản là lời giải cho câu hỏi: <b>6,9 điểm chuyển đổi kia lấy ở đâu ra.</b></p>
+
+  <details class="pcard" style="border-left:3px solid var(--warm-gray)">
+    <summary><span class="no">ⓘ</span><span class="tt" style="font-size:18px">Nguồn số liệu và cách đo<span class="who"><span class="chip c-neu">Đọc khi cần kiểm chứng</span></span></span><span class="imp"></span></summary>
+    <div class="steps6">
+      <div class="st"><span class="lb">Hợp đồng · doanh thu · giá trị đơn</span><div><p>Bảng <b>2.2 Quản lý Hợp đồng</b> trên Larkbase, tính theo <b>tháng tạo đơn hàng</b> (không phải tháng chụp), vì lead và đơn cùng phát sinh trong một tháng nên mới so được với nhau. Doanh thu là số sau giảm giá.</p></div></div>
+      <div class="st"><span class="lb">Lead</span><div><p>Meta Ads, chỉ số <b>Messaging conversation started</b>, lọc riêng các chiến dịch có tiền tố HN, đã loại chiến dịch tuyển dụng. Dùng cùng một thước đo cho cả hai kỳ.</p><p class="note" style="margin-top:6px">Đối chiếu: T6–T8/2026 Meta Ads ghi nhận 1.977 lead, bảng theo dõi hội thoại trên Larkbase ghi nhận 2.087 hội thoại — lệch 5,3%. Hai nguồn xác nhận lẫn nhau, và cho thấy <b>khoảng 95% hội thoại của Ngọt Hà Nội là do quảng cáo sinh ra</b>.</p></div></div>
+      <div class="st"><span class="lb">Vì sao chọn kỳ T6–T12/2025</span><div><p>Cơ sở Hà Nội mở tháng 5/2025. Các tháng 4–5/2025 là giai đoạn chạy thử (8 và 64 hợp đồng), nếu đưa vào sẽ làm kỳ so sánh thấp giả tạo và khiến 2026 trông đẹp hơn thực tế. <b>T6–T12/2025 là bảy tháng vận hành đầy đủ đầu tiên</b> — đây mới là mốc so công bằng.</p></div></div>
+      <div class="st"><span class="lb">Chỉ số không đưa vào</span><div><p>Tỷ trọng upsell không có trong bảng hợp đồng ở dạng tách sẵn nên không đưa vào bảng so sánh, tránh đưa số ước lượng. Thay vào đó dùng <b>chi phí quảng cáo trên mỗi hợp đồng</b> — số này lấy trực tiếp được từ cả hai nguồn.</p></div></div>
+    </div>
+  </details>
+</section>
+
+<!-- ══ PHẦN 2 · BẰNG CHỨNG HỘI THOẠI ══ -->
+<section>
+  <div class="sechead"><span class="no">02</span><h2>Ba bằng chứng từ 2.740 hội thoại</h2></div>
+  <p class="sub">Quét toàn bộ bảng theo dõi hội thoại Larkbase ngày 25/09/2026: <b>2.853 hội thoại</b> từ T6 đến T9/2026, trong đó <b>2.740</b> thuộc tuyến Tư vấn bán, 220 chốt lịch, 2.196 rớt. Lý do rớt đã được ghi cho 99,7% số ca — lần đầu có số thật thay cho phỏng đoán.</p>
+
+  <div class="tiles">
+    <div class="tile"><span class="k">Hội thoại tư vấn bán</span><span class="v">2.740</span><span class="d">T6–T9/2026</span></div>
+    <div class="tile"><span class="k">Chốt lịch</span><span class="v">220</span><span class="d">8,0% số hội thoại</span></div>
+    <div class="tile"><span class="k">Rớt</span><span class="v neg">2.196</span><span class="d">80,1% số hội thoại</span></div>
+    <div class="tile"><span class="k">Đã ghi lý do rớt</span><span class="v pos">99,7%</span><span class="d">2.190 / 2.196 — dữ liệu đủ tin để kết luận</span></div>
+  </div>
+
+  <div class="owner">
+    <div class="ow" style="border-left:3px solid var(--good)">
+      <h4>Bằng chứng 1 · Khách gần như không rớt vì giá</h4>
+      <div class="tablebox" style="margin:10px 0"><table>
+        <thead><tr><th>Lý do ghi nhận</th><th class="r">Số ca</th><th class="r">%</th></tr></thead>
+        <tbody>
+          <tr><td><b>Không phản hồi</b></td><td class="r"><b>1.977</b></td><td class="r"><b>90,3%</b></td></tr>
+          <tr><td>Khác</td><td class="r">113</td><td class="r">5,2%</td></tr>
+          <tr><td>Lịch không phù hợp</td><td class="r">29</td><td class="r">1,3%</td></tr>
+          <tr><td>Không chọn được concept</td><td class="r">27</td><td class="r">1,2%</td></tr>
+          <tr><td>Khách xa</td><td class="r">20</td><td class="r">0,9%</td></tr>
+          <tr><td><b>Đắt</b></td><td class="r neg"><b>12</b></td><td class="r neg"><b>0,5%</b></td></tr>
+          <tr><td>Chọn studio khác</td><td class="r">11</td><td class="r">0,5%</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Đúng <b>12 ca trong 2.190</b> ghi lý do là giá. Cộng thêm việc tỷ lệ giảm giá không đổi giữa hai kỳ, giả thuyết "khách chê đắt" bị bác bỏ bằng số liệu.</p>
+    </div>
+
+    <div class="ow" style="border-left:3px solid var(--bad)">
+      <h4>Bằng chứng 2 · Khách rớt sau khi đã tư vấn thật</h4>
+      <div class="tablebox" style="margin:10px 0"><table>
+        <thead><tr><th>Độ sâu hội thoại</th><th class="r">Nhóm rớt</th><th class="r">Nhóm chốt</th></tr></thead>
+        <tbody>
+          <tr><td>≤5 tin — hỏi rồi biến</td><td class="r">25,1%</td><td class="r">0,9%</td></tr>
+          <tr><td>6–15 tin — chớm tư vấn</td><td class="r">17,4%</td><td class="r">2,3%</td></tr>
+          <tr><td><b>16–40 tin — tư vấn thật</b></td><td class="r"><b>44,6%</b></td><td class="r">4,5%</td></tr>
+          <tr><td>&gt;40 tin — vào sâu</td><td class="r">12,8%</td><td class="r"><b>92,3%</b></td></tr>
+        </tbody>
+      </table></div>
+      <p class="note"><b>57,4% ca rớt là rớt sâu</b> (từ 16 tin trở lên). Trung vị: nhóm chốt 90,5 tin, nhóm rớt 19 tin. Đây không phải lead rác — đây là khách quan tâm thật.</p>
+    </div>
+
+    <div class="ow" style="border-left:3px solid var(--gold)">
+      <h4>Bằng chứng 3 · Số điện thoại là ngưỡng niềm tin</h4>
+      <div class="tiles" style="margin:10px 0;grid-template-columns:1fr 1fr">
+        <div class="tile"><span class="k">Nhóm đã chốt lịch</span><span class="v pos">92,3%</span><span class="d">để lại số điện thoại</span></div>
+        <div class="tile"><span class="k">Nhóm rớt</span><span class="v neg">3,7%</span><span class="d">để lại số điện thoại</span></div>
+      </div>
+      <p class="note">Khách nói chuyện 16–40 tin mà vẫn không chịu để lại số — đó chính là hình ảnh của <b>người quan tâm nhưng chưa đủ tin để bước qua ngưỡng cam kết</b>. Việc để lại số điện thoại không tốn tiền; thứ nó tốn là niềm tin.</p>
+    </div>
+  </div>
+
+  <div class="warnbox">
+    <b class="h">Chốt lại phần bằng chứng</b>
+    <p>Ba con số — <b>0,5%</b> rớt vì giá, <b>57,4%</b> rớt sâu, <b>3,7%</b> để lại số — cùng chỉ về một chỗ. Khách hiểu giá, thích ảnh, chịu nói chuyện lâu, nhưng đến lúc phải bước qua ngưỡng cam kết đầu tiên thì họ dừng lại. <b>Nút thắt của Ngọt Hà Nội là niềm tin, không phải giá, và cũng không phải quy trình bán.</b></p>
+  </div>
+</section>
+<!-- ══ PHẦN 3 · NĂM VẤN ĐỀ ══ -->
+<section>
+  <div class="sechead"><span class="no">03</span><h2>Năm vấn đề cốt lõi</h2></div>
+  <p class="sub">Mỗi vấn đề trình bày theo đúng năm bước: <b>Vấn đề → Nguyên nhân → Số liệu chứng minh → Tác hại ảnh hưởng → Giải pháp đề xuất</b>. Bấm vào từng thẻ để mở.</p>
+
+  <div class="legend">
+    <span><i style="background:var(--mkt)"></i>Marketing</span>
+    <span><i style="background:var(--sale)"></i>Sale</span>
+    <span><i style="background:var(--cream)"></i>Cả hai bộ phận</span>
+  </div>
+
+  <div class="seg" role="group" aria-label="Lọc theo bộ phận">
+    <button data-f="all" aria-pressed="true">Tất cả · 5</button>
+    <button data-f="mkt" aria-pressed="false">Marketing</button>
+    <button data-f="sale" aria-pressed="false">Sale</button>
+    <button data-f="both" aria-pressed="false">Cả hai</button>
+  </div>
+
+  <div class="seg" style="margin-top:-4px">
+    <button id="openall" aria-pressed="false">Mở tất cả</button>
+  </div>
+
+  <div id="plist" style="display:flex;flex-direction:column;gap:13px"></div>
+  <p class="note" id="pcount"></p>
+</section>
+
+<!-- ══ PHẦN 4 · MÔ PHỎNG ══ -->
+<section>
+  <div class="sechead"><span class="no">04</span><h2>Thử kéo con số</h2></div>
+  <p class="sub">Giữ nguyên 784 lead mỗi tháng — thứ duy nhất thay đổi là tỷ lệ chuyển đổi. Kéo thanh trượt để thấy 6,9 điểm chuyển đổi đáng giá bao nhiêu.</p>
+
+  <div class="sim">
+    <div>
+      <div class="simrow">
+        <label for="r-cv">Tỷ lệ chuyển đổi <span id="v-cv">15,2%</span></label>
+        <input type="range" id="r-cv" min="120" max="250" step="1" value="152">
+        <p class="simnote">Hiện tại 15,2% · Mốc T10 là 20,0% · Trung bình cả kỳ phải đạt 22,1% · Nửa cuối 2025 đạt 17,2%</p>
+      </div>
+      <div class="simrow">
+        <label for="r-ld">Lead vào mỗi tháng <span id="v-ld">784</span></label>
+        <input type="range" id="r-ld" min="600" max="1100" step="1" value="784">
+        <p class="simnote">Trung bình T1–T8/2026 là 784 lead/tháng · nửa cuối 2025 là 895</p>
+      </div>
+      <div class="simrow">
+        <label for="r-av">Giá trị mỗi đơn <span id="v-av">2.602.000đ</span></label>
+        <input type="range" id="r-av" min="1900" max="3400" step="1" value="2602">
+        <p class="simnote">Trung bình T1–T8/2026 · nửa cuối 2025 là 2.344.000đ</p>
+      </div>
+    </div>
+    <div class="simout">
+      <div>
+        <span class="eyebrow">Doanh thu / tháng</span>
+        <div class="simbig" id="o-rev">309,6tr</div>
+      </div>
+      <div class="simline"><span>Hợp đồng / tháng</span><b id="o-hd">119</b></div>
+      <div class="simline"><span>So với hiện tại</span><b id="o-gap">—</b></div>
+      <div class="simline"><span>So với mục tiêu (450tr)</span><b id="o-floor">−140,4tr</b></div>
+      <div class="simline"><span>Quý IV/2026 (3 tháng) chênh lệch</span><b id="o-q4">—</b></div>
+      <p class="simnote" id="o-note">Kéo tỷ lệ chuyển đổi lên 22,1% mà không đổi gì khác — doanh thu đạt 450tr/tháng, đúng mục tiêu cả kỳ.</p>
+      <p class="simnote" style="border-top:1px dashed var(--line);padding-top:8px">Ô mô phỏng làm tròn số hợp đồng về số nguyên, nên có thể lệch tối đa 0,1tr so với bảng số liệu ở mục 01.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PHẦN 5 · ĐỒNG THUẬN ══ -->
+<section>
+  <div class="sechead"><span class="no">05</span><h2>Đồng thuận sau buổi tâm sự</h2></div>
+  <p class="sub">Biên bản này chỉ có giá trị khi hai bên thống nhất được vấn đề. Tích vào từng dòng đã đồng thuận.</p>
+
+  <div class="cklist" id="agree">
+    <button class="ck" type="button"><span class="bx">✓</span><span><b>Đồng thuận 1 —</b> Nút thắt của Ngọt Hà Nội là <b>niềm tin của khách</b>, không phải giá bán và cũng không phải quy trình bán.</span></button>
+    <button class="ck" type="button"><span class="bx">✓</span><span><b>Đồng thuận 2 —</b> Doanh thu đang <b>giảm thật</b> (−14,2% mỗi tháng so với nửa cuối 2025), và hợp đồng rơi nhanh gấp đôi lead. Giá trị đơn tăng 11% không đủ bù.</span></button>
+    <button class="ck" type="button"><span class="bx">✓</span><span><b>Đồng thuận 3 —</b> Kéo tỷ lệ chuyển đổi từ 15,2% lên <b>22,1% trung bình</b> (20% ở T10, 23% ở T4) <b>rẻ hơn</b> việc tăng 45,1% ngân sách quảng cáo, và là con đường được chọn — dù con số này cao hơn hẳn kỳ tốt nhất từng đạt (17,2%).</span></button>
+    <button class="ck" type="button"><span class="bx">✓</span><span><b>Đồng thuận 4 —</b> Marketing chịu trách nhiệm làm khách <b>biết và thích Ngọt trước khi nhắn tin</b>; Sale chịu trách nhiệm làm khách <b>đủ tin để cam kết</b>. Hai việc tách bạch, đo riêng.</span></button>
+    <button class="ck" type="button"><span class="bx">✓</span><span><b>Đồng thuận 5 —</b> Không có dữ liệu chất lượng tư vấn thì mọi cải thiện đều là phỏng đoán. Ba cột đo chất lượng phải được nhập từ tuần đầu T10.</span></button>
+  </div>
+  <p class="note" id="agcount">Đã đồng thuận 0 / 5</p>
+
+  <div class="tldr" style="margin-top:8px">
+    <span class="eyebrow">Việc tiếp theo</span>
+    <p>Buổi 02 — <b>Khai thông điểm nghẽn</b> — sẽ đi vào lộ trình xử lý: thứ tự ưu tiên gỡ, kế hoạch gỡ nhanh toàn bộ trong <b>tháng 10</b>, rồi sáu tháng vừa chạy vừa tối ưu để đạt trung bình <b>22,1% chuyển đổi và 450tr doanh thu</b> mỗi tháng.</p>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+<footer class="brand">
+  <svg class="mk" viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+  <div class="t"><b>NGỌT</b><span>Studio Consultancy</span></div>
+  <div class="slg">Đam mê dựng nghề,<br>hệ thống giữ nghiệp.</div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id)};
+
+/* ─────────── DỮ LIỆU NĂM VẤN ĐỀ ─────────── */
+var P=[
+{
+ no:"01", g:"mkt", title:"Lead đông nhưng lạnh — khách đến vì quảng cáo, không đến vì Ngọt",
+ who:"Marketing", imp:"95%", impLabel:"hội thoại do quảng cáo sinh ra",
+ prob:"Mỗi tháng Ngọt Hà Nội nhận 784 lead, ít hơn nửa cuối 2025 là 12,3%. Và gần như toàn bộ đều là người vừa nhìn thấy một mẩu quảng cáo rồi nhắn tin hỏi giá — họ chưa biết Ngọt là ai, chưa xem ảnh của Ngọt, chưa có lý do nào để tin Ngọt hơn studio bên cạnh.",
+ cause:[
+  "Nội dung đang chạy theo hướng <b>thu lead</b> (ưu đãi, giá, kêu gọi nhắn tin) chứ không theo hướng <b>tạo nhu cầu</b> (khiến người chưa định chụp thấy cần chụp).",
+  "Không có lớp nội dung trung gian để khách biết — thích — nhớ Ngọt trước khi bước vào hội thoại.",
+  "Toàn bộ lưu lượng dồn vào một page duy nhất, nên không tách được đâu là khách đã theo dõi Ngọt, đâu là khách hoàn toàn lạ."
+ ],
+ data:[
+  ["≈95% hội thoại do quảng cáo sinh ra","T6–T8/2026: Meta Ads 1.977 lead, base ghi 2.087 hội thoại — phần không đến từ ads gần như bằng 0"],
+  ["2.356 / 2.740 hội thoại (86,0%)","đến từ duy nhất một page quảng cáo — không tách được khách quen với khách lạ"],
+  ["Lead −12,3% nhưng chi quảng cáo chỉ −9,6%","tiền quảng cáo đang kém hiệu quả đi, không phải bị cắt"],
+  ["Chi quảng cáo mỗi hợp đồng +16,9%","211.600đ lên 247.300đ — phần Marketing chịu trách nhiệm trực tiếp"],
+  ["25,1% ca rớt kết thúc trong ≤5 tin","hỏi giá rồi biến — dấu hiệu điển hình của lead lạnh"]
+ ],
+ harm:[
+  "Mỗi tháng mất khoảng <b>19 hợp đồng</b> chỉ vì lead ít đi — tương đương gần 50tr doanh thu.",
+  "Sale phải thuyết phục từ con số không trong từng hội thoại, thay vì tiếp nhận người đã sẵn thiện cảm.",
+  "Khi ngân sách quảng cáo dừng, doanh thu dừng theo — không có tài sản thương hiệu tích luỹ.",
+  "Muốn bù bằng tiền thì phải tăng ngân sách 29,9%, trong khi chi phí mỗi hợp đồng vốn đã tăng 16,9%."
+ ],
+ sol:[
+  "Tách rõ hai tầng nội dung: <b>tầng tạo nhu cầu</b> (câu chuyện, hậu trường, giá trị của việc lưu giữ tuổi thơ) và <b>tầng thu lead</b> (ưu đãi, lịch trống). Đặt tỷ trọng cụ thể cho từng tầng.",
+  "Đặt chỉ tiêu <b>tỷ trọng lead ấm</b> — lead đến từ người đã theo dõi, đã tương tác, đã xem nội dung của Ngọt — thay vì chỉ đếm tổng số lead.",
+  "Gắn nhãn nguồn theo chiến dịch ngay từ quảng cáo, để tháng sau đo được nhóm nào chốt tốt và dồn ngân sách về đó."
+ ]
+},
+{
+ no:"02", g:"both", title:"Khách quan tâm thật nhưng không đủ tin để cam kết",
+ who:"Sale &amp; Marketing · <b>nút thắt trung tâm</b>",
+ imp:"57,4%", impLabel:"ca rớt xảy ra sau ≥16 tin nhắn",
+ prob:"Đây là vấn đề lớn nhất trong năm vấn đề. Hơn một nửa số khách rớt là người đã nói chuyện với sale từ 16 tin trở lên — hỏi kỹ, xem ảnh, quan tâm thật — rồi im lặng và biến mất đúng lúc phải để lại số điện thoại hoặc đặt cọc.",
+ cause:[
+  "Khách mới biết Ngọt qua một mẩu quảng cáo, chưa có bằng chứng nào đủ mạnh để tin rằng con mình sẽ được chụp đẹp và được đối xử tử tế.",
+  "Hành trình từ <b>thích ảnh</b> đến <b>đặt cọc 300.000đ</b> không có bước trung gian nào — khoảng cách cam kết quá lớn cho một người mới quen. Cọc là quy tắc bất biến, nên phải thêm bước ở giữa chứ không phải bỏ cọc.",
+  "<b>Ngọt đã có quy định cọc được đổi lịch mà vẫn giữ nguyên</b>, nhưng sale thường xuyên không nói ra. Một bảo chứng sẵn có, không tốn đồng nào, đang bị bỏ phí.",
+  "Mọi thứ khách có để kiểm chứng đều là lời của sale. Không có tài liệu, không có cam kết bằng văn bản, không có lời chứng của khách cũ được gửi trong hội thoại.",
+  "Khách không rời đi vì chê — họ rời đi vì <b>chưa đủ lý do để nói có</b>. Im lặng là cách từ chối lịch sự nhất."
+ ],
+ data:[
+  ["12 / 2.190 ca rớt ghi lý do “Đắt” (0,5%)","giá không phải là lý do — tỷ lệ giảm giá cũng không đổi giữa hai kỳ"],
+  ["1.977 / 2.190 ghi “Không phản hồi” (90,3%)","khách biến mất trong im lặng, không tranh luận, không mặc cả"],
+  ["57,4% ca rớt xảy ra sau ≥16 tin","không phải lead rác — đây là nhóm khách tốt nhất đang bị mất"],
+  ["Nhóm rớt chỉ 3,7% để lại SĐT · nhóm chốt 92,3%","chênh lệch 25 lần — để lại số là ngưỡng niềm tin, không phải thủ tục"],
+  ["Trung vị tin nhắn: nhóm chốt 90,5 · nhóm rớt 19","người tin thì nói tiếp; người chưa tin thì dừng lại giữa chừng"],
+  ["Tỷ lệ chuyển đổi 17,2% → 15,2%","mất 16 hợp đồng mỗi tháng thuần do khả năng chốt, không liên quan số lead"]
+ ],
+ harm:[
+  "Ngọt đang mất đúng nhóm khách giá trị nhất — người đã bỏ công tìm hiểu và có nhu cầu thật.",
+  "Mỗi tháng mất khoảng <b>16 hợp đồng</b> thuần do khả năng chốt — tương đương hơn 40tr doanh thu.",
+  "Mọi đồng ngân sách marketing đều bị chặn lại ở cùng một ngưỡng cuối, nên tăng ngân sách không giải quyết được gì.",
+  "Đội sale nói nhiều mà không chốt được, lâu dần mất động lực và chuyển sang trả lời cho xong."
+ ],
+ sol:[
+  "<b>Nói ra quyền đổi lịch ngay trong câu báo cọc.</b> Ngọt đã cho đổi lịch mà vẫn giữ nguyên cọc, nhưng khách không biết vì sale không nói. Chuẩn hoá thành một câu bắt buộc mỗi lần báo cọc — không tốn gì, làm được từ ngày mai.",
+  "<b>Chèn một bước trung gian trước cọc: video call 10 phút.</b> Mời khách xem studio thật, xem concept, hỏi gì hỏi hết. Khách phải để lại số điện thoại để đặt lịch — vừa lấy được SĐT, vừa tạo cam kết nhỏ, vừa là nơi chốt cọc.",
+  "Dựng <b>Bộ công cụ niềm tin</b> — ba thứ sale gửi được ngay trong hội thoại: album thật của một bé cùng độ tuổi, ba cam kết bằng văn bản (không phát sinh chi phí · đổi lịch giữ nguyên cọc · hoàn cọc nếu Ngọt sai hẹn), và lời chứng có hình của khách cũ.",
+  "Marketing dựng sẵn <b>kho bằng chứng</b> cho sale dùng, phân loại theo độ tuổi bé và theo tình huống để sale gửi trong vòng một phút.",
+  "Đo riêng <b>tỷ lệ khách để lại số điện thoại</b> như một chỉ số niềm tin độc lập, báo cáo hằng tuần."
+ ]
+},
+{
+ no:"03", g:"sale", title:"Có người trực tối, khách vẫn phải đợi",
+ who:"Sale", imp:"24,2%", impLabel:"ca rớt phải chờ hơn 60 phút mới có phản hồi đầu",
+ prob:"Ngọt đã có ca trực buổi tối, nhưng người trực vẫn làm như ban ngày nên khách vẫn có lúc phải đợi rất lâu. Không siết chặt hơn được — sale cũng cần nghỉ. Vấn đề thật là <b>không có lớp đỡ nào khi sale bận</b>: khách nhắn vào là rơi vào im lặng cho tới khi có người rảnh.",
+ cause:[
+  "Không có cam kết thời gian phản hồi (SLA) nên tốc độ hoàn toàn tuỳ tình hình từng lúc.",
+  "Đã có ca trực tối nhưng người trực vẫn làm như ban ngày — và không thể ép sale online liên tục vì ai cũng cần nghỉ.",
+  "Không có tin chạm đầu tự động nào giữ chân khách trong lúc chờ. Khách nhắn vào là im lặng hoàn toàn.",
+  "Không có kịch bản chuẩn cho các tình huống lặp lại, nên sale dùng lại câu trả lời cũ một cách máy móc.",
+  "Không có nhịp chăm lại khách đã im — khách im một lần là mất luôn, không ai quay lại.",
+  "Không có bảng chấm chất lượng tư vấn, nên không ai biết mình đang làm tốt hay chưa."
+ ],
+ data:[
+  ["Nhóm chốt: 76,7% trả lời trong ≤5 phút · nhóm rớt: 34,4%","tốc độ phản hồi đầu là yếu tố phân biệt rõ nhất giữa chốt và rớt"],
+  ["24,2% ca rớt phải chờ hơn 60 phút mới có phản hồi đầu","gần một phần tư số khách bị bỏ rơi ngay từ tin nhắn đầu tiên"],
+  ["Trong 524 ca có ghi điểm yếu: kịch bản máy móc 9,4% · chậm phản hồi 9,4% · thiếu lời mời chốt 7,1% · hỏi ngược khách 5,3% · không chăm lại 4,0%","năm mẫu lỗi lặp đi lặp lại, đều sửa được mà không tốn tiền"],
+  ["Hai sale chốt 8,5% và 7,5% — chênh nhau 1 điểm","đây là lỗi của cách làm chung, không phải lỗi của một cá nhân"]
+ ],
+ harm:[
+  "Khách đang ở đỉnh hứng thú thì phải chờ — và hứng thú không chờ được.",
+  "Trải nghiệm tư vấn không đồng nhất làm hỏng đúng thứ Ngọt bán: cảm giác được chăm sóc tử tế.",
+  "Không có chuẩn thì không đào tạo được người mới, và mỗi lần thay nhân sự là mất lại từ đầu.",
+  "Các mẫu lỗi nhỏ này cộng dồn chính là một phần của vấn đề niềm tin ở mục 02."
+ ],
+ sol:[
+  "<b>SLA hai tầng — tách máy khỏi người.</b> Tầng máy: tin chạm đầu trong 1 phút, mọi khung giờ. Tầng người: ≤10 phút trong giờ, ≤30 phút khung tối. Sale không phải online liên tục mà khách vẫn không bị bỏ rơi.",
+  "<b>Câu chờ có nội dung thật</b> — chào bằng tên sale, hỏi tên và tuổi bé, gửi kèm một album mẫu đúng độ tuổi, hẹn giờ cụ thể sẽ có người trả lời. Vừa giữ chân vừa lấy thông tin để sale vào là tư vấn ngay.",
+  "<b>Chatbot chỉ có một nhiệm vụ: câu giờ khi sale không online.</b> Không tư vấn, không báo giá, không xin số điện thoại — chỉ giữ khách ở lại thêm vài phút cho tới khi có người thật vào.",
+  "Viết <b>kịch bản cho năm tình huống</b> lặp lại nhiều nhất: hỏi giá ngay · so sánh với studio khác · hỏi rồi im · chê xa · phân vân concept.",
+  "Áp <b>nhịp chăm lại D+1 / D+3 / D+7</b> cho mọi khách đã im, kèm nội dung khác nhau ở mỗi mốc.",
+  "Chấm <b>năm tiêu chí</b> mỗi tuần trên mẫu ngẫu nhiên: tốc độ tầng người · báo giá rõ · gửi bằng chứng · xin số điện thoại · lời mời chốt."
+ ]
+},
+{
+ no:"04", g:"both", title:"Chương trình đã có — nhưng không ai chạy",
+ who:"Marketing &amp; Sale", imp:"16,2%", impLabel:"hợp đồng từ giới thiệu — trong khi chương trình gần như không chạy",
+ prob:"Chuỗi chăm sau chụp theo mốc và chương trình giới thiệu đều đã tồn tại. Vấn đề là sale không thấy việc này quan trọng nên làm cho có, và phần thưởng đưa ra chưa đủ sức để khách ra quyết định giới thiệu. Dù vậy tỷ trọng giới thiệu vẫn tự tăng từ 10,4% lên <b>16,2%</b> — nếu chương trình chạy thật thì con số còn đi xa hơn nhiều.",
+ cause:[
+  "Phần thưởng hiện tại là <b>giảm giá cho buổi chụp sau</b> — người giới thiệu phải chờ tới lần chụp tiếp theo mới nhận được, có thể sáu tháng nữa hoặc không bao giờ. Phần thưởng nằm quá xa nên không thúc đẩy được hành động hôm nay.",
+  "Sale không nhận thức được mức độ quan trọng của việc này nên làm cho có: không mời, hoặc mời qua loa.",
+  "Không có chỉ tiêu riêng và không có thưởng cho sale, nên nó luôn bị đẩy xuống cuối danh sách việc.",
+  "Lời mời không phát ra đúng lúc. Thời điểm khách hài lòng nhất là <b>lúc nhận ảnh</b> — nhưng không ai mời lúc đó.",
+  "Không có mã giới thiệu nên không biết ai giới thiệu ai; không đo được thì không quản được."
+ ],
+ data:[
+  ["Giới thiệu: 10,4% → <b>16,2%</b> số hợp đồng","tăng 5,8 điểm dù chương trình gần như không chạy — đòn bẩy rõ nhất đang bỏ ngỏ"],
+  ["154 hợp đồng từ giới thiệu trong T1–T8/2026","gần 20 hợp đồng mỗi tháng, khoảng 50tr doanh thu không tốn tiền quảng cáo"],
+  ["0 hợp đồng được ghi nguồn “Khách cũ”","không phải không có, mà là <b>không đo được</b> — nên không quản được"],
+  ["102 / 2.853 hội thoại thuộc tuyến CSKH sau chụp (3,6%)","hoạt động chăm sóc sau chụp gần như không để lại dấu vết trên dữ liệu"]
+ ],
+ harm:[
+  "Hơn 80% doanh thu mỗi tháng vẫn phải mua lại bằng quảng cáo — trong khi chi phí mỗi hợp đồng đã tăng 16,9%.",
+  "Kênh rẻ nhất và đáng tin nhất đang chạy bằng may rủi thay vì bằng cơ chế.",
+  "Bỏ lỡ kênh có niềm tin cao nhất — đúng thứ đang thiếu ở mục 02: người được bạn bè giới thiệu không cần thuyết phục về lòng tin.",
+  "Không tích luỹ được tài sản khách hàng, nên giá trị studio không tăng theo thời gian vận hành."
+ ],
+ sol:[
+  "<b>Kéo phần thưởng từ tương lai về hiện tại.</b> Bỏ “giảm giá buổi chụp sau”, thay bằng thứ người giới thiệu nhận ngay khi người được giới thiệu chụp xong: ảnh in khổ lớn · buổi chụp bổ sung ngắn · voucher không giới hạn thời gian. Giá vốn thấp, giá trị cảm nhận cao, và nhận được ngay.",
+  "<b>Thưởng cả hai đầu</b> — người được giới thiệu cũng nhận ưu đãi riêng, để người giới thiệu có cái cụ thể để nói với bạn mình.",
+  "<b>Mời đúng lúc: ngay khi giao ảnh</b>, do sale nói trực tiếp, kèm mã riêng của khách. Đây là khoảnh khắc khách hài lòng nhất trong toàn bộ hành trình.",
+  "<b>Gắn chỉ tiêu và thưởng cho sale</b> theo số lượt giới thiệu mỗi tháng — cách duy nhất khiến việc này thôi bị coi là việc phụ.",
+  "<b>Giao chuỗi chăm 4 mốc cho một người canh</b>, có danh sách, lịch nhắc và nội dung soạn trước, để không phụ thuộc vào việc ai đó nhớ ra."
+ ]
+},
+{
+ no:"05", g:"both", title:"Đã biết khách im — giờ phải biết im ở bước nào",
+ who:"Marketing &amp; Sale", imp:"0%", impLabel:"dữ liệu ở ba cột đo chất lượng tư vấn",
+ prob:"Bảng theo dõi hội thoại đã ghi rất tốt những gì xảy ra ở đầu vào: bao nhiêu tin nhắn, từ page nào, kết quả ra sao. Nhưng phần quan trọng nhất — sale đã tư vấn như thế nào, và khách rơi ở bước nào — thì vẫn còn trống.",
+ cause:[
+  "Nhãn <b>Không phản hồi</b> chiếm 90,3% số ca rớt nhưng không cho biết khách im ở bước nào, nên không sửa được đúng chỗ.",
+  "Ba cột phản ánh chất lượng tư vấn (báo giá rõ ràng · đã gửi bằng chứng · đã mời chốt) chưa được nhập một dòng nào.",
+  "Cột thời gian phản hồi đầu chỉ có 11,2% dữ liệu, và không tách được phản hồi của máy với phản hồi của người.",
+  "Chưa có nhịp báo cáo cố định, nên dữ liệu có nhập cũng không ai đọc và không dẫn tới hành động nào."
+ ],
+ data:[
+  ["<b>Ghi nhận tiến bộ:</b> cột Lý do từ chối đạt 99,7% trên nhóm rớt","lần quét trước chỉ 16,9% — đội hoàn toàn có khả năng kỷ luật dữ liệu khi được yêu cầu rõ ràng"],
+  ["Số tin nhắn 100% · Page nguồn 99,9%","hai cột đáng tin nhất, nên dùng làm thước đo chính"],
+  ["Thời gian phản hồi đầu chỉ 11,2%","kết luận về tốc độ hiện dựa trên mẫu 306 ca, chưa đủ chắc"],
+  ["Điểm tư vấn · Báo giá rõ ràng · Lời mời chốt: <b>0%</b>","không có cơ sở nào để kết luận sale tư vấn tốt hay chưa"]
+ ],
+ harm:[
+  "Không biết khách im ở bước nào, nên mỗi lần cải thiện đều là sửa dàn trải thay vì sửa đúng chỗ.",
+  "Không tách được lỗi kỹ năng của sale với lỗi chất lượng nguồn lead — hai bộ phận đổ lỗi qua lại mà không ai sai hẳn.",
+  "Hiệu quả của bốn nút thắt kia cũng không đo được, nên không biết nên tiếp tục hay dừng.",
+  "Chính vì thiếu dữ liệu này mà tỷ lệ chuyển đổi rơi 2 điểm trong gần một năm mà không ai phát hiện kịp."
+ ],
+ sol:[
+  "<b>(Anh Quang đã xử lý 25/9)</b> Thêm cột <b>Trạng thái không phản hồi</b> bên cạnh cột Lý do từ chối, năm giá trị: im ngay sau khi nhắn tin · im sau khi gửi concept · im sau khi gửi minh chứng · im sau khi gửi báo giá · im sau khi mời chốt. Cập nhật khi quét lead hằng ngày.",
+  "<b>Biến năm trạng thái đó thành vòng lặp sửa lỗi hằng tuần.</b> Mỗi tuần đọc phân bố, tìm bước rơi nhiều nhất, tuần sau chỉ sửa đúng bước đó. Im nhiều sau báo giá thì sửa cách báo giá; im ngay từ tin đầu thì vấn đề nằm ở tốc độ và chất lượng lead.",
+  "Bắt buộc nhập <b>ba cột chất lượng</b> cho mọi hội thoại kết thúc: báo giá rõ ràng · đã gửi bằng chứng · đã mời chốt. Không nhập thì hội thoại chưa được coi là đóng.",
+  "Tự động ghi <b>thời gian phản hồi đầu, tách hai tầng</b> máy và người, khớp với SLA hai tầng ở mục 03.",
+  "Ra <b>báo cáo một trang mỗi tuần</b>, bắt buộc có một dòng: <i>tuần này sửa bước nào</i>. Báo cáo chỉ liệt kê việc đã làm thì không nhận."
+ ]
+}
+];
+
+/* ─────────── DỰNG THẺ ─────────── */
+var LB=["Vấn đề","Nguyên nhân","Số liệu chứng minh","Tác hại ảnh hưởng","Giải pháp đề xuất"];
+function esc(s){return s}
+function ul(arr){return "<ul>"+arr.map(function(x){return "<li>"+x+"</li>"}).join("")+"</ul>"}
+function dataRows(rows){
+  return "<div class='tablebox'><table><tbody>"+rows.map(function(r){
+    return "<tr><td style='width:46%'><b>"+r[0]+"</b></td><td>"+r[1]+"</td></tr>";
+  }).join("")+"</tbody></table></div>";
+}
+var list=$("plist");
+P.forEach(function(p){
+  var d=document.createElement("details");
+  d.className="pcard"; d.setAttribute("data-g",p.g);
+  d.innerHTML=
+   "<summary><span class='no'>"+p.no+"</span>"+
+   "<span class='tt'>"+p.title+"<span class='who'><span class='chip c-"+(p.g==="mkt"?"mkt":p.g==="sale"?"sale":"neu")+"'>"+p.who+"</span></span></span>"+
+   "<span class='imp'><b>"+p.imp+"</b>"+p.impLabel+"</span></summary>"+
+   "<div class='steps6'>"+
+     "<div class='st'><span class='lb'><i>01</i>"+LB[0]+"</span><div><p>"+p.prob+"</p></div></div>"+
+     "<div class='st'><span class='lb'><i>02</i>"+LB[1]+"</span><div>"+ul(p.cause)+"</div></div>"+
+     "<div class='st'><span class='lb'><i>03</i>"+LB[2]+"</span><div>"+dataRows(p.data)+"</div></div>"+
+     "<div class='st harm'><span class='lb'><i>04</i>"+LB[3]+"</span><div>"+ul(p.harm)+"</div></div>"+
+     "<div class='st'style='background:var(--good-soft)'><span class='lb' style='color:var(--good)'><i style='color:var(--good)'>05</i>"+LB[4]+"</span><div>"+ul(p.sol)+"</div></div>"+
+   "</div>";
+  list.appendChild(d);
+});
+
+/* ─────────── LỌC ─────────── */
+var segs=document.querySelectorAll('.seg [data-f]');
+function applyFilter(f){
+  var n=0;
+  Array.prototype.forEach.call(list.children,function(el){
+    var ok = (f==="all") || el.getAttribute("data-g")===f;
+    el.hidden=!ok; if(ok)n++;
+  });
+  $("pcount").textContent="Đang hiển thị "+n+" / "+P.length+" vấn đề.";
+}
+Array.prototype.forEach.call(segs,function(b){
+  b.addEventListener("click",function(){
+    Array.prototype.forEach.call(segs,function(x){x.setAttribute("aria-pressed",String(x===b))});
+    applyFilter(b.getAttribute("data-f"));
+  });
+});
+applyFilter("all");
+
+var oa=$("openall");
+oa.addEventListener("click",function(){
+  var open=oa.getAttribute("aria-pressed")!=="true";
+  oa.setAttribute("aria-pressed",String(open));
+  oa.textContent=open?"Đóng tất cả":"Mở tất cả";
+  Array.prototype.forEach.call(list.children,function(el){el.open=open});
+});
+
+/* ─────────── MÔ PHỎNG ─────────── */
+function fm(n,d){return n.toLocaleString("vi-VN",{minimumFractionDigits:d||0,maximumFractionDigits:d||0})}
+var rcv=$("r-cv"), rld=$("r-ld"), rav=$("r-av"), BASE=null;
+function sim(){
+  var cv=+rcv.value/10, ld=+rld.value, av=+rav.value/1000;
+  $("v-cv").textContent=fm(cv,1)+"%";
+  $("v-ld").textContent=fm(ld);
+  $("v-av").textContent=fm(+rav.value*1000)+"đ";
+  var hd=Math.round(ld*cv/100), rev=hd*av;
+  if(BASE===null)BASE=rev;
+  $("o-rev").textContent=fm(rev,1)+"tr";
+  $("o-hd").textContent=fm(hd);
+  var g=rev-BASE;
+  var ge=$("o-gap");
+  ge.textContent=(g>=0?"+":"−")+fm(Math.abs(g),1)+"tr";
+  ge.className=g>=0?"pos":"neg";
+  var f=rev-450;
+  var fe=$("o-floor");
+  fe.textContent=(f>=0?"+":"−")+fm(Math.abs(f),1)+"tr";
+  fe.className=f>=0?"pos":"neg";
+  var qe=$("o-q4");
+  qe.textContent=(g>=0?"+":"−")+fm(Math.abs(g)*3,0)+"tr";
+  qe.className=g>=0?"pos":"neg";
+  var note;
+  if(f>=0) note="Ở mức này Ngọt Hà Nội <b>vượt mục tiêu</b> "+fm(f,1)+"tr mỗi tháng.";
+  else note="Ở mức này vẫn còn thiếu <b>"+fm(-f,1)+"tr</b> so với mục tiêu 450tr/tháng.";
+  if(cv>=19.9 && cv<=20.1 && ld===784) note+=" Đây là mốc tháng 10 — vẫn chưa đủ cho mục tiêu cả kỳ.";
+  if(cv>=22.0 && cv<=22.2 && ld===784) note+=" Đây chính là mức trung bình cả kỳ cần đạt.";
+  $("o-note").innerHTML=note;
+}
+[rcv,rld,rav].forEach(function(r){r.addEventListener("input",sim)});
+sim();
+
+/* ─────────── ĐỒNG THUẬN ─────────── */
+var cks=document.querySelectorAll("#agree .ck");
+function agc(){
+  var n=0; Array.prototype.forEach.call(cks,function(c){if(c.classList.contains("done"))n++});
+  $("agcount").textContent="Đã đồng thuận "+n+" / "+cks.length+(n===cks.length?" — đủ điều kiện chuyển sang buổi Khai thông điểm nghẽn.":"");
+  try{localStorage.setItem("nsc-bb-agree",JSON.stringify(Array.prototype.map.call(cks,function(c){return c.classList.contains("done")})))}catch(e){}
+}
+try{
+  var saved=JSON.parse(localStorage.getItem("nsc-bb-agree")||"[]");
+  Array.prototype.forEach.call(cks,function(c,i){if(saved[i])c.classList.add("done")});
+}catch(e){}
+Array.prototype.forEach.call(cks,function(c){
+  c.addEventListener("click",function(){c.classList.toggle("done");agc()});
+});
+agc();
+})();
+</script>
+
+<script>
+(function(){
+ var b=document.getElementById('themebtn'); if(!b)return;
+ function lbl(){var d=document.documentElement.getAttribute('data-theme')!=='light';
+   b.textContent=d?'Nền sáng':'Nền tối'}
+ try{var s=localStorage.getItem('nsc-theme');if(s)document.documentElement.setAttribute('data-theme',s)}catch(e){}
+ lbl();
+ b.addEventListener('click',function(){
+   var d=document.documentElement.getAttribute('data-theme')==='light';
+   document.documentElement.setAttribute('data-theme',d?'dark':'light');
+   try{localStorage.setItem('nsc-theme',d?'dark':'light')}catch(e){} lbl();});
+})();
+</script>
+
+</body>
+</html>
